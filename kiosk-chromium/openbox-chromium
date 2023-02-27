@@ -54,7 +54,12 @@ KIOSK_URL=${KIOSK_URL:-"http://hemisphere-project.com"}
 
 chromium \
         --enable-accelerated-video-decode --enable-gpu-rasterization --enable-unsafe-webgpu --ignore-gpu-blocklist --enable-zero-copy \
-        --no-sandbox --enable-features=CanvasOopRasterization,EnableDrDc \
+        --no-sandbox --enable-features=CanvasOopRasterization,EnableDrDc --disable-features=InfiniteSessionRestore \
+        --incognito --start-maximized --ignore-certificate-errors --test-type \
+        --disable-pinch --overscroll-history-navigation=0 --autoplay-policy=no-user-gesture-required \
         --disable-infobars --disable-web-security --disable-site-isolation-trials --user-data-dir="/tmp" --kiosk "$KIOSK_URL"
+        
+        
+# Bluetooth WebBT  ## --vmodule=*bluetooth*=9 --enable-experimental-web-platform-features
 
 
